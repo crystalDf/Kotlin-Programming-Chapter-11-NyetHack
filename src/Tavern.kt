@@ -69,9 +69,16 @@ fun main(args: Array<String>) {
         patronGold[name] = 6.0
     }
 
+    displayPatronBalances()
+
     var orderCount = 0
 
-    while (orderCount <= 6) {
+    while (orderCount <= 9) {
+
+        if (uniquePatrons.isEmpty()) {
+            break
+        }
+
         placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
         orderCount++
     }
